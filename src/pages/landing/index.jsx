@@ -102,6 +102,7 @@ export const Landing = () => {
                         <TeamPortrait
                             key={i}
                             trainer_name={findTrainer(el, teams.included).name}
+                            trainer_image={findTrainer(el, teams.included).image}
                             pokemons={el.attributes.pokemons}
                         >
                             <AiOutlineEdit
