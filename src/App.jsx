@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import Axios from "axios";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useLocation } from "react-router-dom";
 
 import { Landing } from './pages/landing/index';
 import { Start } from "./pages/start";
@@ -12,6 +12,7 @@ import { Navbar } from "./components/navbar";
 export const DataContext = createContext([])
 
 const App = () => {
+
   const [data, setData] = useState(
     {
       trainers: [],
@@ -81,7 +82,7 @@ const App = () => {
 
   return (
     <>
-      <DataContext.Provider value={{ data, addToTeam, removeToTeam, requestSearchPokemon }}>
+      <DataContext.Provider value={{ data, addToTeam, removeToTeam, requestSearchPokemon, requestAllData }}>
         <Router>
           <Navbar/>
           <Switch>

@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components';
 import { CgPokemon } from 'react-icons/cg'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { useContext } from 'react/cjs/react.development';
+import { DataContext } from '../../App';
 
 const Container = styled.nav`
     height: 65px;
@@ -20,13 +22,20 @@ const Container = styled.nav`
 `;
 
 export const Navbar = ({ redirect }) => {
-
+    const { requestAllData } = useContext(DataContext)
     return (
         <Container>
-            <Link to="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Link 
+                to="/" 
+                onClick={requestAllData}
+                style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
                 <CgPokemon size="2em"/>
             </Link>
-            <Link to="/">
+            <Link 
+                to="/" 
+                onClick={requestAllData}
+            >
                 <span>Home</span>
             </Link>
             <Link to="/start">

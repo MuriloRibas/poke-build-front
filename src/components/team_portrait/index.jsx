@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components';
 import { Pokemon } from '../common/pokemon';
 import trainerAvatar from '../../assets/trainer-avatar.png'
-import { AiOutlineDelete } from 'react-icons/ai'
 
 const Container = styled.div`
     min-height: 150px;

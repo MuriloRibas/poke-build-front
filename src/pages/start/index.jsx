@@ -50,7 +50,7 @@ export const Start = () => {
             pokemons: data.team
         })
             .then(res => alert('Equipe criada com sucesso!'))
-            .catch(err => console.log('erro>>: ', err))
+            .catch(err => console.log('Erro!: ', err))
     
     }
 

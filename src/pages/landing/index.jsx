@@ -43,8 +43,9 @@ const Label = styled.label`
 
 export const Landing = () => {
     const [contentType, setContentType] = useState('teams')
-    const { teams, trainers } = useContext(DataContext).data
-    // const [feed, setFeed] = useState([]);
+    const data = useContext(DataContext)
+    const { teams, trainers } = data.data
+    const { requestAllData } = data
     const [loading, setLoading] = useState(false);
 
     const history = useHistory()
@@ -54,11 +55,9 @@ export const Landing = () => {
             .then(res => {
                 console.log(res)  
                 setLoading(false)
+                requestAllData()
             })
-            .catch(err => {
-                console.log('Erro! ', err)
-                setLoading(false)
-            })
+            .catch(err => setLoading(false))
 
     const handleContentType = (e) => setContentType(e.target.value)
 
@@ -119,7 +118,9 @@ export const Landing = () => {
                                 style={{ cursor: 'pointer', position: 'absolute', top: '0', right: '0', margin: '15px 35px 0px 0px' }}
                             />
                             <AiOutlineDelete 
-                                onClick={() => requestDelete('teams', el.id)}
+                                onClick={() => {
+                                    requestDelete('teams', el.id)
+                                }}
                                 size="1em"
                                 style={{ cursor: 'pointer', position: 'absolute', top: '0', right: '0', margin: '15px 15px 0px 0px' }}
                             />

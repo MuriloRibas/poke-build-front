@@ -131,7 +131,6 @@ const CreateTrainer = ({ name, age, gender, image, change, submit }) => {
             </InputContainer>
             
             <InputSubmit type="submit" value="Continuar"/>
-            {/* <button onClick={() => history.push('/pick_trainer') }>Escolher um treinador</button> */}
 
         </Form>
     )
