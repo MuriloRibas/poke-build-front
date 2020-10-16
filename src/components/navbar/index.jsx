@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { CgPokemon } from 'react-icons/cg'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import { useContext } from 'react/cjs/react.development';
+import { useContext } from 'react';
 import { DataContext } from '../../App';
 
 const Container = styled.nav`
