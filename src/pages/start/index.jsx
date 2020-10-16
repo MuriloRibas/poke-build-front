@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useContext } from 'react'
-import styled from 'styled-components';
-import CreateTrainer from '../../components/create_trainer';
-import { ManageTeam } from '../../components/create_team/index';
-import { IoMdArrowBack } from 'react-icons/io'
 import Axios from 'axios';
 import { DataContext } from '../../App';
+import styled from 'styled-components';
+import { IoMdArrowBack } from 'react-icons/io'
+
+import CreateTrainer from '../../components/create_trainer';
+import { ManageTeam } from '../../components/create_team/index';
 
 const Container = styled.div` 
     display: flex;

@@ -67,7 +67,9 @@ export const ManageTeam = ({ trainer_name, trainer_image, submit, isEditing = fa
                         .map((el2, i) => (
                             <Pokemon 
                                 image={el2.front_sprite}
-                                onClick={(e) => dataToUpdate.length > 0 ? add(el2.name, el2.type, el2.front_sprite) : addToTeam(el2.name, el2.type, el2.front_sprite)}
+                                onClick={(e) => 
+                                    dataToUpdate.length > 0 ? add(el2.name, el2.type, el2.front_sprite) 
+                                    : addToTeam(el2.name, el2.type, el2.front_sprite)}
                                 add_animation
                                 key={i}
                             >

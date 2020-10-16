@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Axios from 'axios'
 import styled from 'styled-components';
 import { useLocation, useHistory } from 'react-router-dom';
-import { TeamPortrait } from '../../components/team_portrait/index';
+
 import { ManageTeam } from '../../components/create_team/index';
-import Axios from 'axios'
 
 export const Container = styled.div`
   display: flex;
@@ -15,7 +15,6 @@ export const Container = styled.div`
 
 export const Team = () => {
 
-    // const [data, setData] = useState([])
     const [dataTeam, setDataTeam] = useState({})
     const [dataPokemons, setDataPokemons] = useState([])
     const [dataTrainer, setDataTrainer] = useState({})
@@ -28,14 +27,6 @@ export const Team = () => {
         console.log('removeToTeam')
         setDataPokemons(dataPokemons.filter(el => el.name !== name)) 
     }
-
-    // const requestSearchPokemon = (pokemon) => {
-    //     Axios.get('https://pokeapi.co/api/v2/pokemon/' + pokemon)
-    //         .then(res => 
-    //             setData([...data, { name: res.data.name, front_sprite: res.data.sprites.front_default, type: res.data.types[0].type.name }])
-    //         )
-    //         .catch(err => console.log('Erro!'))
-    // } 
 
     const submit = () => {
         Axios.put(process.env.REACT_APP_API_URL + '/teams/' + dataTeam.id, {

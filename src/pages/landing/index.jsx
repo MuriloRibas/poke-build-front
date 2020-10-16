@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react'
+import Axios from 'axios';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-import { Navbar } from '../../components/navbar';
+import { DataContext } from '../../App';
+
 import { Header } from '../../components/header';
 import { TeamPortrait } from '../../components/team_portrait/index';
 import { PortraitsLayout } from '../../components/portraits_layout';
 import { TrainerPortrait } from '../../components/trainer_portrait';
-import { DataContext } from '../../App';
 import { AiOutlineDelete, AiOutlineEdit } from 'react-icons/ai';
-import Axios from 'axios';
 
 const ContainerRadios = styled.div` 
     width: 300px;
@@ -109,7 +109,11 @@ export const Landing = () => {
                             
                                 onClick={() =>  {
                                     const trainer = findTrainer(el, teams.included)
-                                    history.push('/team/' + el.id, { data_team: el, data_pokemons: el.attributes.pokemons, data_trainer: trainer })}
+                                    history.push('/team/' + el.id, { 
+                                        data_team: el, 
+                                        data_pokemons: el.attributes.pokemons, 
+                                        data_trainer: trainer }
+                                    )}
                                 } 
                                 size="1em"
                                 style={{ cursor: 'pointer', position: 'absolute', top: '0', right: '0', margin: '15px 35px 0px 0px' }}
