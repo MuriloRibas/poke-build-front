@@ -56,7 +56,7 @@ export const ManageTeam = ({ trainer_name, trainer_image, submit, isEditing = fa
                     value={search}
                     name="search"
                     onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Exemplo: Pikachu"
+                    placeholder="Exemplo: pikachu"
                 />
             </Label>
 
